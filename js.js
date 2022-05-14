@@ -23,12 +23,12 @@ class Contenedor {
 
     save(objeto) {
 
-       let json = fs.readFileSync('data.txt' , 'utf-8')
-        let array = JSON.parse(json)
-        array.push(objeto)
-        let id = array.length
-        objeto.id = id
-        let jsonString = fs.writeFileSync('data.json', JSON.stringify(array))
+       let json = fs.readFileSync('data.txt' , 'utf-8') // lee el archivo
+        let array = JSON.parse(json) // convierte el archivo en un array con los objetos
+        array.push(objeto) // agrega el objeto al array
+        let id = array.length // obtiene el id del objeto que se agrega
+        objeto.id = id // le asigna el id al objeto que se agrega
+        let jsonString = fs.writeFileSync('data.json', JSON.stringify(array)) // escribe el array en el archivo
         return id
     }
  
